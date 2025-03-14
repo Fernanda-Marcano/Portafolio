@@ -6,6 +6,9 @@ from .forms import ProjectForm
 from .models import Project
 
 
+class IndexPortafolio(TemplateView):
+    template_name = 'layouts/index.html'
+
 class ProjectCreateView(CreateView):
     model = Project
     form_class = ProjectForm

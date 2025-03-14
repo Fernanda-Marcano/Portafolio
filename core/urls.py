@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+from apps.proyectos.views import IndexPortafolio
+from .views import contact
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('portafolio/', include('apps.proyectos.urls')), 
+    path('', IndexPortafolio.as_view(), name='index'),
+    path('contact', contact, name='contact')
 ]
 
 if settings.DEBUG:
